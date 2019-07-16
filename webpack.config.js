@@ -1,6 +1,6 @@
+const path = require('path');
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 const smp = new SpeedMeasurePlugin();
 
 module.exports = smp.wrap({
@@ -12,15 +12,16 @@ module.exports = smp.wrap({
 	},
 	output:
 	{
-		filename: 'bundle.js',
-		path: __dirname + '/build'
+		filename: 'js/bundle.js',
+		path: path.resolve(__dirname, './public'),
+		publicPath: '/public/',
 	},
 	module:
 	{
 		rules:
 			[
 				{
-					test: /\.(ts|tsx)$/,
+					test: /\.(js|ts|tsx)$/,
 					loader: 'babel-loader',
 				}
 			]
