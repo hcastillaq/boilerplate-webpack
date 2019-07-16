@@ -11,12 +11,14 @@ class App extends React.Component{
 	}
 	
 	componentDidMount() {
-		importModule()
+		setTimeout( () => {
+			importModule()
 			.then( e => {
 				let Person = e.default;
 				let Me = new Person('I am', ' a Person');
 				this.setState( { person : Me } );
 			});
+		}, 3000);
 	}
 	
 	render()
@@ -24,7 +26,7 @@ class App extends React.Component{
 		const	{ person } = this.state; 
 		return(
 			<div>
-				{ person != null ? person.getName + person.getLastname : 'Esperando' }
+				{ person != null ? person.getName + person.getLastname : this.props.msg }
 			</div>
 		);
 	}
