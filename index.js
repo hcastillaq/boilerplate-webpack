@@ -1,9 +1,7 @@
-const personImport = ()=>(import('./test/Person'));
+import Vue from 'vue';
+import Home from './test/home.vue';
 
-setTimeout( ()=>{
-	personImport().then( e => {
-		const Person = e.default;
-		let Me = new Person('I am', 'a Person');
-		console.log(Me.getName, Me.getLastname);
-	});
-}, 5000);
+new Vue({
+	el:"#root",
+	render: h => h(Home)
+});
