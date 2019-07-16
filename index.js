@@ -1,9 +1,6 @@
-const personImport = ()=>(import('./test/Person'));
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-setTimeout( ()=>{
-	personImport().then( e => {
-		const Person = e.default;
-		let Me = new Person('I am', 'a Person');
-		console.log(Me.getName, Me.getLastname);
-	});
-}, 5000);
+import App from './test/tsx/App';
+
+ReactDOM.render( <App />, document.getElementById("root"));
