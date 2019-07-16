@@ -31,10 +31,9 @@ module.exports = smp.wrap({
 		extensions: ['.js', '.jsx', '.tsx', '.ts', '.json']
 	},
 	plugins:[
-		new BundleAnalyzerPlugin(
-			{
-				analyzerMode: 'static'
-			}
-		)
+		new BundleAnalyzerPlugin({
+			openAnalyzer: false,
+			analyzerMode: 'static'
+		})
 	]
 });
