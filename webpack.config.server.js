@@ -4,16 +4,16 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const smp = new SpeedMeasurePlugin();
 
 module.exports = smp.wrap({
-	target: "web",
+	target: "node",
 	mode: "development",
 	entry:
 	{
-		app: "./index.js"
+		app: "./server.js"
 	},
 	output:
 	{
-		filename: 'js/bundle.js',
-		path: path.resolve(__dirname, './public'),
+		filename: 'server.js',
+		path: path.resolve(__dirname, './bin'),
 		publicPath: '/public/',
 	},
 	module:
@@ -33,7 +33,7 @@ module.exports = smp.wrap({
 	plugins:[
 		new BundleAnalyzerPlugin(
 			{
-				analyzerMode: 'static'
+			analyzerMode: 'static'
 			}
 		)
 	]
