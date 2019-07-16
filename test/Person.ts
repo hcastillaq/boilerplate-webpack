@@ -9,22 +9,22 @@ class Person{
 		this.lastame = lastname;
 	}
 
-	setName(name)
+	set setname(name)
 	{
 		this.name = name;
 	}
 
-	setLastname(lastname)
+	set setLastname(lastname)
 	{
 		this.lastame = lastname
 	}
 	
-	getName()
+	get getName()
 	{
 		return this.name;
 	}
 
-	getLastname()
+	get getLastname()
 	{
 		return this.lastame;
 	}

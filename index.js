@@ -1,9 +1,9 @@
-const personImport = import('./test/Person');
+const personImport = ()=>(import('./test/Person'));
 
 setTimeout( ()=>{
-	personImport.then( e => { 
+	personImport().then( e => {
 		const Person = e.default;
-		let Me = new Person('One', 'Person');
-		console.log(Me.getName(), Me.getLastname());
+		let Me = new Person('I am', 'a Person');
+		console.log(Me.getName, Me.getLastname);
 	});
-}, 1000);
+}, 5000);

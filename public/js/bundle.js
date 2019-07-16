@@ -208,7 +208,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var personImport = __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./test/Person */ \"./test/Person.ts\"));\nsetTimeout(function () {\n  personImport.then(function (e) {\n    var Person = e[\"default\"];\n    var Me = new Person('One', 'Person');\n    console.log(Me.getName(), Me.getLastname());\n  });\n}, 1000);\n\n//# sourceURL=webpack:///./index.js?");
+eval("var personImport = function personImport() {\n  return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./test/Person */ \"./test/Person.ts\"));\n};\n\nsetTimeout(function () {\n  personImport().then(function (e) {\n    var Person = e[\"default\"];\n    var Me = new Person('I am', 'a Person');\n    console.log(Me.getName, Me.getLastname);\n  });\n}, 5000);\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 
